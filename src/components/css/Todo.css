@@ -1,0 +1,6 @@
+textarea {
+    width: 100%;
+    min-height: 30px; /* Start with a small height */
+    overflow: hidden; /* Hide scrollbar */
+    resize: none; /* Prevent manual resizing */
+}

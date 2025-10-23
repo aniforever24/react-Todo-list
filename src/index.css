@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.nav-links {
+		@apply text-white block text-center sm:min-w-28 min-w-24 leading-[1.5];
+	}
+	.hover-links {
+		@apply font-bold;
+	}
+}
+
+/* CSS Reset */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Inter", system-ui;
+	font-optical-sizing: auto;
+	background: #f5e9ff;
+}
+
+/* Button styling */
+button {
+	position: relative;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+/* Tooltip styling */
+button .tooltip-text {
+	visibility: hidden;
+	width: calc(100% + 30px);
+	background-color: #333333c7;
+	color: #fff;
+	text-align: center;
+	border-radius: 5px;
+	padding: 8px;
+	position: absolute;
+	bottom: 150%; /* Position above the button */
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: 0;
+	transition: opacity 0.3s;
+	z-index: 1;
+}
+
+/* Tooltip arrow */
+button .tooltip-text::after {
+	content: "";
+	position: absolute;
+	top: 100%; /* At the bottom of the tooltip */
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #333 transparent transparent transparent;
+}
+
+/* Show the tooltip on hover */
+button:hover .tooltip-text {
+	visibility: visible;
+	animation: fadeInOut 1.5s ease forwards;
+}
+
+/* Animation for fade in and fade out */
+@keyframes fadeInOut {
+	0% {
+		opacity: 0;
+	}
+	10% {
+		opacity: 1;
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		visibility: hidden;
+	}
+}

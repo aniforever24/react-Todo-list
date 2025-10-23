@@ -1,0 +1,6 @@
+.todosContainer, .todos {
+    scrollbar-width: thin;
+}
+.todosContainer {
+    height:  calc(100% - 12rem);
+}
